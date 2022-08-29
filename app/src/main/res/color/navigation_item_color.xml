@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#007BE4" android:state_checked="true" /> <!-- selected颜色 -->
+    <item android:color="#A3A4A9" /> <!-- default颜色 -->
+
+</selector>

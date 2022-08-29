@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/park_two_radius_two_angle"
+        tools:context=".fragment.drivearea.ParkOutFragment">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/park_string_park_out"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.012" />
+
+        <ImageView
+            android:id="@+id/park_out_left_line"
+            android:layout_width="10dp"
+            android:layout_height="200dp"
+            android:layout_marginEnd="15dp"
+            android:contentDescription="@string/park_img_content"
+            android:src="@drawable/park_vertical_line"
+            app:layout_constraintBottom_toBottomOf="@+id/park_out_car"
+            app:layout_constraintEnd_toStartOf="@+id/park_out_car"
+            app:layout_constraintTop_toTopOf="@+id/park_out_car"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <ImageView
+            android:id="@+id/park_out_right_line"
+            android:layout_width="10dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/park_img_content"
+            android:src="@drawable/park_vertical_line"
+            app:layout_constraintBottom_toBottomOf="@+id/park_out_car"
+            app:layout_constraintStart_toEndOf="@+id/park_out_car"
+            app:layout_constraintTop_toTopOf="@+id/park_out_car"
+            app:layout_constraintVertical_bias="0.50" />
+
+        <ImageView
+            android:id="@+id/park_out_car"
+            android:layout_width="40dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/park_img_content"
+            android:src="@drawable/park_small_car"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <RelativeLayout
+            android:id="@+id/left_park_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/park_out_left_line"
+            app:layout_constraintEnd_toStartOf="@+id/park_out_left_line"
+            app:layout_constraintTop_toTopOf="@+id/park_out_left_line"
+            app:layout_constraintVertical_bias="0.50">
+
+            <ImageView
+                android:id="@+id/left_arrow"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/park_img_content"
+                android:src="@drawable/park_left_arrow_gray" />
+
+            <TextView
+                android:id="@+id/left_park_out_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/left_arrow"
+                android:layout_marginTop="21dp"
+                android:text="@string/park_string_park_out_left"
+                android:textColor="#BBBBBB"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/right_park_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/park_out_right_line"
+            app:layout_constraintStart_toEndOf="@+id/park_out_right_line"
+            app:layout_constraintTop_toTopOf="@+id/park_out_right_line"
+            app:layout_constraintVertical_bias="0.50">
+
+            <ImageView
+                android:id="@+id/right_arrow"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/park_img_content"
+                android:src="@drawable/park_right_arrow_blue" />
+
+            <TextView
+                android:id="@+id/right_park_out_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/right_arrow"
+                android:layout_marginTop="23dp"
+                android:contentDescription="@string/park_img_content"
+                android:text="@string/park_string_park_out_right"
+                android:textColor="@color/blue_60"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/park_img_content"
+            android:src="@drawable/park_img_park_car"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/park_out_car" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

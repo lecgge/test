@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwitchView">
+        <attr name="bgColor" format="color|reference" />
+        <attr name="leftColor" format="color|reference" />
+        <attr name="rightColor" format="color|reference" />
+        <attr name="textLeftColor" format="color" />
+        <attr name="textRightColor" format="color" />
+        <attr name="textLeftClickColor" format="color" />
+        <attr name="textRightClickColor" format="color" />
+        <attr name="textLeft" format="string" />
+        <attr name="textRight" format="string" />
+        <attr name="setChecked" format="boolean" />
+        <attr name="padding" format="dimension" />
+        <attr name="time" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="DashBoardView">
+        <attr name="color_dial_lower" format="color" />
+        <attr name="color_dial_middle" format="color" />
+        <attr name="color_dial_high" format="color" />
+        <attr name="text_size_dial" format="dimension" />
+        <attr name="stroke_width_dial" format="dimension" />
+        <attr name="radius_circle_dial" format="dimension" />
+        <attr name="text_title_dial" format="string" />
+        <attr name="text_title_size" format="dimension" />
+        <attr name="text_title_color" format="color" />
+        <attr name="text_size_value" format="dimension" />
+        <attr name="animator_play_time" format="integer" />
+        <attr name="text_data_unit" format="string" />
+        <attr name="text_clock_point_num" format="integer" />
+    </declare-styleable>
+</resources>

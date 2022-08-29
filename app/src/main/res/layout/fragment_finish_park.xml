@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#222834"
+        tools:context=".fragment.drivearea.ParkFinishFragment">
+
+        <TextView
+            android:id="@+id/park_success_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/park_success"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.011" />
+
+        <ImageView
+            android:id="@+id/park_icon_p"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="3dp"
+            android:contentDescription="@string/park_img_content"
+            app:layout_constraintBottom_toBottomOf="@+id/park_success_text"
+            app:layout_constraintRight_toLeftOf="@+id/park_success_text"
+            app:layout_constraintTop_toTopOf="@+id/park_success_text"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/parked_icon_blue_p" />
+
+        <ImageView
+            android:id="@+id/park_icon_dot"
+            android:layout_width="13dp"
+            android:layout_height="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/park_img_content"
+            app:layout_constraintBottom_toBottomOf="@+id/park_success_text"
+            app:layout_constraintStart_toEndOf="@+id/park_success_text"
+            app:layout_constraintTop_toTopOf="@+id/park_success_text"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/parked_icon_blue_dot" />
+
+        <ImageView
+            android:id="@+id/park_finish_gray_car_1"
+            android:layout_width="66dp"
+            android:layout_height="204dp"
+            android:contentDescription="@string/park_img_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.075"
+            app:srcCompat="@drawable/parked_icon_gray_car" />
+
+        <ImageView
+            android:id="@+id/park_finish_gray_car_2"
+            android:layout_width="66dp"
+            android:layout_height="204dp"
+            android:contentDescription="@string/park_img_content"
+            app:layout_constraintBottom_toBottomOf="@+id/park_finish_gray_car_1"
+            app:layout_constraintLeft_toRightOf="@+id/park_finish_pink_car"
+            app:layout_constraintTop_toTopOf="@+id/park_finish_gray_car_1"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/parked_icon_gray_car" />
+
+        <ImageView
+            android:id="@+id/park_finish_gray_car_3"
+            android:layout_width="66dp"
+            android:layout_height="204dp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="@string/park_img_content"
+            app:layout_constraintBottom_toBottomOf="@+id/park_finish_gray_car_2"
+            app:layout_constraintLeft_toRightOf="@+id/park_finish_gray_car_2"
+            app:layout_constraintTop_toTopOf="@+id/park_finish_gray_car_2"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/parked_icon_gray_car" />
+
+        <ImageView
+            android:id="@+id/park_finish_pink_car"
+            android:layout_width="106dp"
+            android:layout_height="244dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/park_finish_gray_car_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.38"
+            app:srcCompat="@drawable/parked_icon_pink_car" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:contentDescription="@string/park_img_content"
+            android:src="@drawable/park_img_park_car"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/park_finish_pink_car" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">HMI</string>
+
+    <!--    左侧导航栏-->
+    <string name="function">功能</string>
+    <string name="setting">工程模式</string>
+    <string name="filter">智驾域</string>
+    <string name="frame">车身域</string>
+    <string name="meter">驾驶盘仪表</string>
+    <string name="lowriding">底盘域</string>
+    <string name="other">其它</string>
+    <string name="dock">使用指导</string>
+
+    <!--    TOPAppBar-->
+    <string name="refresh">刷新</string>
+    <string name="pause">暂停</string>
+    <string name="play">播放</string>
+    <string name="close">关闭</string>
+    <string name="park_string_search_car">车位搜索</string>
+    <string name="park_string_search_car_info">车位搜索中，请保持直线前行</string>
+    <string name="park_string_park_out">请选择泊车方向</string>
+    <string name="park_string_park_out_left">左侧泊出</string>
+    <string name="park_string_park_out_right">右侧泊出</string>
+    <string name="park_string_park_in_model">泊入模式</string>
+    <string name="park_string_park_out_info">泊出模式</string>
+    <string name="park_success">泊车成功</string>
+
+    <string name="fun_drive">驾驶控制</string>
+    <string name="fun_air">空调控制</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="drive_control">驾驶控制</string>
+    <string name="air_control">空调控制</string>
+    <string name="intelligent_driving">智能驾驶</string>
+    <string name="function_intelligent_driving">智能驾驶功能</string>
+    <string name="label_1">关闭</string>
+    <string name="label_2">ACC</string>
+    <string name="label_3">ALC</string>
+    <string name="label_4">关闭</string>
+    <string name="label_5">ACC</string>
+    <string name="label_6">ALC</string>
+    <string name="lka">车道保持辅助（LKA)</string>
+    <string name="lka_system">车道保持辅助系统</string>
+    <string name="label_7">OFF</string>
+    <string name="label_8">ACC</string>
+    <string name="label_9">TJA</string>
+    <string name="adas">向前辅助驾驶辅助系统（ADAS)</string>
+    <string name="adas_system">前向驾驶辅助系统</string>
+    <string name="aeb">自动紧急制动系统（AEB)</string>
+    <string name="fcw">向前碰撞灵敏度（FCW)</string>
+
+
+    <!--    engineer    -->
+    <string name="all_message">全部信息</string>
+    <string name="percent">%</string>
+    <string name="electric">38%</string>
+    <string name="odometer_company">km</string>
+    <string name="eight_hundred">800</string>
+    <string name="READY">READY</string>
+    <string name="R">R</string>
+    <string name="P">P</string>
+    <string name="N">N</string>
+    <string name="D">D</string>
+    <string name="speed">106</string>
+    <string name="speed_company">km/h</string>
+    <string name="blue_arrow">80%</string>
+    <string name="rpm">rpm</string>
+
+
+    <!--  user -->
+    <string name="time">11:00</string>
+    <string name="temperature">28.6℃</string>
+    <string name="user_speed">86</string>
+    <string name="revolutions">2.0</string>
+    <string name="user_rpm">RPM×1000</string>
+    <string name="total_Mileage">总里程</string>
+    <string name="mileage">9600km</string>
+    <string name="endurance_mileage">续航里程</string>
+    <string name="endurance">330km</string>
+    <string name="park_switch_view_content">选择开关</string>
+    <string name="park_img_content">\" \"</string>
+
+
+</resources>

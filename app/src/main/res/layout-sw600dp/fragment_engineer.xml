@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_black"
+        android:orientation="vertical"
+        tools:context=".fragment.eng.EngineerFragment"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="-66dp">
+
+        <RelativeLayout
+            android:id="@+id/engineer_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/engineer_top_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="724dp"
+                android:text="@string/all_message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fg_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/engineer_underline"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/engineer_top_title"
+                android:layout_alignLeft="@+id/engineer_top_title"
+                android:layout_alignRight="@+id/engineer_top_title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@dimen/underline_margin_bottom"
+                android:background="@drawable/under_line" />
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/park_two_radius_two_angle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/engineer_relativeLayout">
+
+
+            <TextView
+                android:id="@+id/electric_list"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="@string/electric"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/electric_quantity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/electric_quantity"
+                app:layout_constraintTop_toTopOf="@+id/electric_quantity"
+                app:layout_constraintVertical_bias="0.0">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/electric_quantity"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_electric"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/oil"
+                app:layout_constraintTop_toBottomOf="@+id/oil" />
+
+            <TextView
+                android:id="@+id/odometer_company"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="2dp"
+                android:gravity="bottom"
+                android:text="@string/odometer_company"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/odometer_list"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/odometer_list"
+                app:layout_constraintTop_toTopOf="@+id/odometer_list"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/odometer_list"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="@string/eight_hundred"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/odometer"
+                app:layout_constraintStart_toEndOf="@+id/odometer"
+                app:layout_constraintTop_toTopOf="@+id/odometer">
+
+            </TextView>
+
+
+            <ImageView
+                android:id="@+id/danger"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_warm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.037" />
+
+            <ImageView
+                android:id="@+id/danger_left"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_left_arrow_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.025" />
+
+            <ImageView
+                android:id="@+id/danger_right"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_right_arrow_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.025" />
+
+            <TextView
+                android:id="@+id/ready"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/READY"
+                android:textColor="@color/eu_green"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.373"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.072" />
+
+            <TextView
+                android:id="@+id/engineer_r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="8dp"
+                android:paddingLeft="20dp"
+                android:text="@string/R"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/engineer_p"
+                app:layout_constraintStart_toEndOf="@+id/engineer_p"
+                app:layout_constraintTop_toTopOf="@+id/engineer_p"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/engineer_n"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="@string/N"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/engineer_r"
+                app:layout_constraintStart_toEndOf="@+id/engineer_r"
+                app:layout_constraintTop_toTopOf="@+id/engineer_r"
+                app:layout_constraintVertical_bias="0.0">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/engineer_d"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/engineer_d_color_change"
+                android:gravity="center"
+                android:text="@string/D"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/engineer_n"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.742"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/engineer_n"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/engineer_p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="@string/P"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ready"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ready"
+                app:layout_constraintTop_toTopOf="@+id/ready">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/light_line"
+                android:layout_width="500dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:src="@drawable/engineer_img_line"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.187" />
+
+
+            <ImageView
+                android:id="@+id/green_row"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_green_row"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.33"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.26" />
+
+            <TextView
+                android:id="@+id/tv_speed"
+                android:layout_width="60dp"
+                android:layout_height="38dp"
+                android:text="@string/speed"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.226" />
+
+            <ImageView
+                android:id="@+id/blue_arrow"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_blue_arrow"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_speed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.066"
+                app:layout_constraintStart_toEndOf="@+id/tv_speed"
+                app:layout_constraintTop_toTopOf="@+id/tv_speed"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/speed_company"
+                android:layout_width="36dp"
+                android:layout_height="16dp"
+                android:text="@string/speed_company"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_speed"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/blue_arrow_text"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="@string/blue_arrow"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/blue_arrow"
+                app:layout_constraintEnd_toEndOf="@+id/blue_arrow"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="@+id/blue_arrow"
+                app:layout_constraintTop_toTopOf="@+id/blue_arrow"
+                app:layout_constraintVertical_bias="0.333" />
+
+            <TextView
+                android:id="@+id/tachometer_list"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="@string/eight_hundred"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tachometer"
+                app:layout_constraintStart_toEndOf="@+id/tachometer"
+                app:layout_constraintTop_toTopOf="@+id/tachometer"
+                app:layout_constraintVertical_bias="0.0">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/oil_list"
+                android:layout_width="40dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:text="@string/blue_arrow"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/oil"
+                app:layout_constraintStart_toEndOf="@+id/oil"
+                app:layout_constraintTop_toTopOf="@+id/oil" />
+
+
+            <ImageView
+                android:id="@+id/tachometer"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_speed"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.618" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.29268292" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.71409214" />
+
+            <TextView
+                android:id="@+id/tachometer_company"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="2dp"
+                android:gravity="bottom"
+                android:text="@string/rpm"
+                android:textColor="@color/eu_gray"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tachometer_list"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tachometer_list"
+                app:layout_constraintTop_toTopOf="@+id/tachometer_list"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/odometer"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_speed"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tachometer" />
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fl_main"
+                android:name="com.wisdplat.hmi.BlankFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="143dp"
+                android:background="@color/user_black"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/guideline13"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <View
+                    android:id="@+id/road_line_left"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/gray_200" />
+
+
+                <View
+                    android:id="@+id/road_dot_line_left"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    android:background="@drawable/vertical_imaginary_line"
+                    android:layerType="software" />
+
+                <View
+                    android:id="@+id/road_dot_line_right"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="110dp"
+                    android:background="@drawable/vertical_imaginary_line"
+                    android:layerType="software" />
+
+                <View
+                    android:id="@+id/road_line_right"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="263dp"
+                    android:background="@color/gray_200" />
+
+            </androidx.fragment.app.FragmentContainerView>
+
+
+            <ImageView
+                android:id="@+id/oil"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_icon_gasoline"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.877"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.635" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/bot"
+            android:name="com.wisdplat.hmi.fragment.eng.BotFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

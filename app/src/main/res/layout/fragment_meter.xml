@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="meterViewModel"
+            type="com.wisdplat.hmi.viewmodel.MeterViewModel" />
+
+        <variable
+            name="showColor"
+            type="int" />
+
+        <variable
+            name="noShowColor"
+            type="int" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".fragment.meter.MeterFragment">
+
+
+        <RelativeLayout
+            android:id="@+id/user_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/user_top_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="724dp"
+                android:text="@string/all_message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fg_title_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/user_underline"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_below="@+id/user_top_title"
+                android:layout_alignLeft="@+id/user_top_title"
+                android:layout_alignRight="@+id/user_top_title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@dimen/underline_margin_bottom"
+                android:background="@drawable/under_line" />
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/user_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_relativeLayout"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints">
+
+            <com.wisdplat.hmi.view.DashBoardView
+                android:id="@+id/speed_display"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.135"
+                app:text_clock_point_num="100"
+                app:text_data_unit="km/h" />
+
+            <com.wisdplat.hmi.view.DashBoardView
+                android:id="@+id/revolution_display"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.97"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.134"
+                app:text_clock_point_num="10"
+                app:text_data_unit="RPM" />
+
+            <FrameLayout
+                android:id="@+id/fl_meter_main"
+                android:layout_width="wrap_content"
+                android:layout_height="143dp"
+                android:background="@color/user_black"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.484"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.471">
+
+                <View
+                    android:id="@+id/road_line_left"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/gray_200" />
+
+
+                <View
+                    android:id="@+id/road_dot_line_left"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    android:background="@drawable/vertical_imaginary_line"
+                    android:layerType="software" />
+
+                <View
+                    android:id="@+id/road_dot_line_right"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="110dp"
+                    android:background="@drawable/vertical_imaginary_line"
+                    android:layerType="software" />
+
+                <View
+                    android:id="@+id/road_line_right"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="263dp"
+                    android:background="@color/gray_200" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:gravity="center_horizontal"
+                android:text="@{meterViewModel.time}"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.058"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.012" />
+
+            <TextView
+                android:id="@+id/p_gear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/P"
+                android:textColor="@{meterViewModel.meterDriveModel.id == 1 &amp;&amp; meterViewModel.meterDriveModel.tag == 1 ? showColor:noShowColor }"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.401"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.035" />
+
+            <TextView
+                android:id="@+id/r_gear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/R"
+                android:textColor="@{meterViewModel.meterDriveModel.id == 2 &amp;&amp; meterViewModel.meterDriveModel.tag == 1 ? showColor:noShowColor }"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/p_gear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.458"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/p_gear"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/n_gear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/N"
+                android:textColor="@{meterViewModel.meterDriveModel.id == 3 &amp;&amp; meterViewModel.meterDriveModel.tag == 1 ? showColor:noShowColor }"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/r_gear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/r_gear"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/d_gear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/D"
+                android:textColor="@{meterViewModel.meterDriveModel.id == 4 &amp;&amp; meterViewModel.meterDriveModel.tag == 1 ? showColor:noShowColor }"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/n_gear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.573"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/n_gear"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/parking"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_parking"
+                app:layout_constraintBottom_toBottomOf="@+id/rear_fog_lamp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.777"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/rear_fog_lamp"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/rear_fog_lamp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_bank_fog_lamp"
+                app:layout_constraintBottom_toBottomOf="@+id/front_fog_lamp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.659"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/front_fog_lamp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/front_fog_lamp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_front_fog_lamp"
+                app:layout_constraintBottom_toBottomOf="@+id/dipped_headlight"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.53"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/dipped_headlight"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/dipped_headlight"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_dipped_head_light"
+                app:layout_constraintBottom_toBottomOf="@+id/high_beam"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.409"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/high_beam"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/high_beam"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_high_beam"
+                app:layout_constraintBottom_toBottomOf="@+id/side_marker_lamp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.291"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/side_marker_lamp"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/side_marker_lamp"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_side_marker_lamp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.728" />
+
+            <ImageView
+                android:id="@+id/speed_limit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/engineer_img_limit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.055"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.379" />
+
+            <TextView
+                android:id="@+id/total_mileage"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:text="@string/total_Mileage"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.9">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/mileage"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="@string/mileage"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/total_mileage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.215"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/total_mileage"
+                app:layout_constraintVertical_bias="0.0">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/trunk"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_trunk"
+                app:layout_constraintBottom_toBottomOf="@+id/engine_cover"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.722"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/engine_cover"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/engine_cover"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_engineer_cover"
+                app:layout_constraintBottom_toBottomOf="@+id/car_door"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.577"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/car_door"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/car_door"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_engineer_img_car_door"
+                app:layout_constraintBottom_toBottomOf="@+id/engine_oil"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.452"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/engine_oil"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/water_temperature"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_water_temperature"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.213"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.791" />
+
+            <ImageView
+                android:id="@+id/engine_oil"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_engineer_img_engineer_oil"
+                app:layout_constraintBottom_toBottomOf="@+id/water_temperature"
+                app:layout_constraintEnd_toStartOf="@+id/guideline9"
+                app:layout_constraintHorizontal_bias="0.307"
+                app:layout_constraintStart_toStartOf="@+id/guideline7"
+                app:layout_constraintTop_toTopOf="@+id/water_temperature"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/endurance_mileage"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="@string/endurance_mileage"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.714"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.902" />
+
+            <TextView
+                android:id="@+id/endurance"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="@string/endurance"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/endurance_mileage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.913"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/endurance_mileage"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/battery"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@null"
+                android:src="@drawable/engineer_img_battery"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.369"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.98" />
+
+            <View
+                android:id="@+id/battery_one"
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:background="@color/user_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/battery"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/battery"
+                app:layout_constraintTop_toTopOf="@+id/battery" />
+
+            <View
+                android:id="@+id/battery_two"
+                android:layout_width="30dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="1dp"
+                android:background="@color/user_blue"
+                app:layout_constraintBottom_toBottomOf="@+id/battery_one"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/battery_one"
+                app:layout_constraintTop_toTopOf="@+id/battery_one"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+            <View
+                android:id="@+id/battery_three"
+                android:layout_width="60dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="1dp"
+                android:background="@color/user_light_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/battery_two"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/battery_two"
+                app:layout_constraintTop_toTopOf="@+id/battery_two">
+
+            </View>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

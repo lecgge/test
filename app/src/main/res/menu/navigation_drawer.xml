@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main_item"
+        android:title="@string/function">
+        <menu>
+
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/engineering_mode"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_menu_setting"
+                    android:title="@string/setting" />
+
+                <item
+                    android:id="@+id/function_control"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_menu_filter"
+                    android:title="@string/filter" />
+                <item
+                    android:id="@+id/parking"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_menu_frame"
+                    android:title="@string/frame" />
+                <item
+                    android:id="@+id/meter"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_menu_meter"
+                    android:title="@string/meter" />
+                <item
+                    android:id="@+id/lowriding"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_menu_lowriding"
+                    android:title="@string/lowriding" />
+            </group>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/other_item"
+        android:title="@string/other">
+        <menu>
+            <item
+                android:id="@+id/instruction"
+                android:enabled="true"
+                android:icon="@drawable/ic_menu_guide"
+                android:title="@string/dock" />
+        </menu>
+    </item>
+
+</menu>

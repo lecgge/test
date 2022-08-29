@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/park_two_radius_two_angle"
+        tools:context=".fragment.function.AirFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fg_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/park_two_radius_two_angle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <ImageView
+                android:id="@+id/imageview_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_fun_switch"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageview_seat"
+                app:layout_constraintHorizontal_bias="0.29"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.12" />
+
+            <ImageView
+                android:id="@+id/imageview_ac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fun_air_ac"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageview_seat"
+                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_switch"
+                app:layout_constraintVertical_bias="0.12" />
+
+            <ImageView
+                android:id="@+id/imageview_loop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fun_air_loop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageview_seat"
+                app:layout_constraintHorizontal_bias="0.27"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_ac"
+                app:layout_constraintVertical_bias="0.12" />
+
+            <ImageView
+                android:id="@+id/imageview_seat"
+                android:layout_width="270dp"
+                android:layout_height="320dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.65"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.31"
+                app:srcCompat="@drawable/seat1" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="480dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:background="@drawable/fun_text_background"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/linearlayout"
+                app:layout_constraintStart_toEndOf="@+id/imageview_loop"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_seat"
+                app:layout_constraintVertical_bias="0.32999998">
+
+                <ImageView
+                    android:id="@+id/fan"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_wind" />
+
+                <SeekBar
+                    android:id="@+id/quick_input_seek"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxHeight="4dp"
+                    android:minHeight="4dp"
+                    android:progressDrawable="@drawable/fun_air_seekbar_bg"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/fun_air_shape_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageview_seat"
+                    app:layout_constraintVertical_bias="0.25" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:id="@+id/linearlayout"
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/fun_air_rule"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageview_seat"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.19999999">
+
+
+                <com.wisdplat.hmi.view.WheelView
+                    android:id="@+id/wv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/fun_air_num_background"
+                    tools:ignore="SpeakableTextPresentCheck"></com.wisdplat.hmi.view.WheelView>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageview_upwind"
+                android:layout_width="300dp"
+                android:layout_height="170dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageview_seat"
+                app:layout_constraintEnd_toEndOf="@+id/imageview_seat"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toEndOf="@+id/imageview_ac"
+                app:layout_constraintTop_toTopOf="@+id/imageview_seat"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/wind_up" />
+
+            <ImageView
+                android:id="@+id/imageview_downwind"
+                android:layout_width="300dp"
+                android:layout_height="170dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageview_seat"
+                app:layout_constraintEnd_toEndOf="@+id/imageview_seat"
+                app:layout_constraintHorizontal_bias="0.35"
+                app:layout_constraintStart_toEndOf="@+id/imageview_loop"
+                app:layout_constraintTop_toTopOf="@+id/imageview_seat"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/wind_down" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
